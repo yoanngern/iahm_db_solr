@@ -144,8 +144,8 @@
    <field name="contactType"            type="string" indexed="true" stored="false" required="false"  multiValued="true"/>
 
    <!-- Entity -->
-   <field name="name"                   type="string" indexed="true" stored="false" required="false" />
-   <field name="members"                type="string" indexed="true" stored="false" required="false"  multiValued="true"/>
+   <field name="name"                   type="string" indexed="true" stored="true" required="false" />
+   <field name="members"                type="string" indexed="true" stored="true" required="false"  multiValued="true"/>
 
    <!-- Event -->
    <field name="start"                  type="date"   indexed="true" stored="true" required="false" />
@@ -168,6 +168,8 @@
    <field name="currency"               type="string" indexed="true" stored="true" required="false" />
 
 
+   <copyField source="doc_title" dest="text"/>
+   <copyField source="doc_description" dest="text"/>
    <copyField source="title" dest="text"/>
    <copyField source="comment" dest="text"/>
    <copyField source="type" dest="text"/>
